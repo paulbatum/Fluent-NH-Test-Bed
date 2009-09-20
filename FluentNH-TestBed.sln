@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{170B633B-0778-4CC6-BEF6-11A47C32DB50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D16AEA0-E9CC-4E72-920E-D0779CE7DC5D}"
+	ProjectSection(SolutionItems) = preProject
+		Binaries\Antlr3.Runtime.dll = Binaries\Antlr3.Runtime.dll
+		Binaries\Castle.Core.dll = Binaries\Castle.Core.dll
+		Binaries\Castle.Core.xml = Binaries\Castle.Core.xml
+		Binaries\Castle.DynamicProxy2.dll = Binaries\Castle.DynamicProxy2.dll
+		Binaries\Castle.DynamicProxy2.xml = Binaries\Castle.DynamicProxy2.xml
+		Binaries\FluentNHibernate.dll = Binaries\FluentNHibernate.dll
+		Binaries\FluentNHibernate.pdb = Binaries\FluentNHibernate.pdb
+		Binaries\Iesi.Collections.dll = Binaries\Iesi.Collections.dll
+		Binaries\Iesi.Collections.xml = Binaries\Iesi.Collections.xml
+		Binaries\log4net.dll = Binaries\log4net.dll
+		Binaries\log4net.xml = Binaries\log4net.xml
+		Binaries\nhibernate-mapping.xsd = Binaries\nhibernate-mapping.xsd
+		Binaries\NHibernate.ByteCode.Castle.dll = Binaries\NHibernate.ByteCode.Castle.dll
+		Binaries\NHibernate.dll = Binaries\NHibernate.dll
+		Binaries\NHibernate.xml = Binaries\NHibernate.xml
+		Binaries\nunit.framework.dll = Binaries\nunit.framework.dll
+		Binaries\Rhino.Mocks.dll = Binaries\Rhino.Mocks.dll
+		Binaries\Rhino.Mocks.xml = Binaries\Rhino.Mocks.xml
+		Binaries\System.Data.SQLite.dll = Binaries\System.Data.SQLite.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9DF7F072-909E-44CE-9C46-888D956E3055}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Debug|x86.ActiveCfg = Debug|x86
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Debug|x86.Build.0 = Debug|x86
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Release|x86.ActiveCfg = Release|x86
+		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Release|x86.Build.0 = Release|x86
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.Build.0 = Debug|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
