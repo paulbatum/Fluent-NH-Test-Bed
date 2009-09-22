@@ -2,35 +2,67 @@
 
 namespace Domain
 {
-    public class TestEntityA
+    public class EntityBase<T> : PersistentBase
     {
-        public virtual int Id { get; set; }
+        private T _id = default(T);
+
+        public virtual T Id
+        {
+            get
+            {
+                return _id;
+            }
+            private set
+            {
+                _id = value;
+            }
+        }
+    }
+
+    public abstract class PersistentBase
+    {}
+
+    public class TestEntityA : EntityBase<int>
+    {
+        private string _name;
+
+        public virtual string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
         private IList<TestEntityB> _children = new List<TestEntityB>();
-        public virtual string Name { get; set; }
-        public virtual Address Address { get; set; }
 
-        //public virtual IEnumerable<TestEntityB> Children
-        //{
-        //    get { return _children; }            
-        //}
+        public virtual IEnumerable<TestEntityB> Children
+        {
+            get { return _children; }
+            //protected set { _children = value.ToList(); }
+        }
+
+        public virtual void AddChild(TestEntityB b)
+        {
+            _children.Add(b);
+            b.TestEntityA = this;
+        }
     }
 
-
-    public class TestEntityB //: EntityBase<int>
+    public class TestEntityB : EntityBase<int>
     {
-        public virtual int Id { get; set; }
-        public virtual string Comment { get; set; }
-        public virtual TestEntityA TestEntityA { get; set; }
-    }
+        private string _comment;
 
-    public class Address
-    {
-        public virtual string Line1 { get; set;}
-        public virtual string Line2 { get; set; }
-    }
+        public virtual string Comment
+        {
+            get { return _comment; }
+            set { _comment = value; }
+        }
 
-    public class EntityBase<T>
-    {
-        public virtual T Id { get; set; }
+        private TestEntityA _testEntityA = null;
+
+        public virtual TestEntityA TestEntityA
+        {
+            get { return _testEntityA; }
+            set { _testEntityA = value; }
+        }
     }
 }

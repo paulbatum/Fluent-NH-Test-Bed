@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Binaries\Castle.DynamicProxy2.xml = Binaries\Castle.DynamicProxy2.xml
 		Binaries\FluentNHibernate.dll = Binaries\FluentNHibernate.dll
 		Binaries\FluentNHibernate.pdb = Binaries\FluentNHibernate.pdb
+		Binaries\HibernatingRhinos.NHibernate.Profiler.Appender.dll = Binaries\HibernatingRhinos.NHibernate.Profiler.Appender.dll
 		Binaries\Iesi.Collections.dll = Binaries\Iesi.Collections.dll
 		Binaries\Iesi.Collections.xml = Binaries\Iesi.Collections.xml
 		Binaries\log4net.dll = Binaries\log4net.dll
@@ -27,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9DF7F072-909E-44CE-9C46-888D956E3055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,11 +49,18 @@ Global
 		{170B633B-0778-4CC6-BEF6-11A47C32DB50}.Release|x86.Build.0 = Release|x86
 		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.Build.0 = Debug|Any CPU
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.ActiveCfg = Debug|x86
+		{9DF7F072-909E-44CE-9C46-888D956E3055}.Debug|x86.Build.0 = Debug|x86
 		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DF7F072-909E-44CE-9C46-888D956E3055}.Release|x86.ActiveCfg = Release|Any CPU
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Debug|x86.ActiveCfg = Debug|x86
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Debug|x86.Build.0 = Debug|x86
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
