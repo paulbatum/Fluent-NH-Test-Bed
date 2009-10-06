@@ -29,18 +29,16 @@ namespace Console
                 )
                 .Mappings(m =>
                 {                    
-                    m.AutoMappings.Add(
-                        AutoMap.AssemblyOf<TestEntityA>()
-                            .IgnoreBase(typeof(EntityBase<>))
-                            .UseOverridesFromAssemblyOf<Program>()
-                            .Conventions.AddFromAssemblyOf<Program>()
-                            
-                        //.Setup(x => x.IsComponentType = type => type == typeof(Address))
-                        );
-                    m.AutoMappings.First().MergeMappings = true;                    
-                    m.AutoMappings.ExportTo("mappings");
+                    //m.AutoMappings.Add(
+                    //    AutoMap.AssemblyOf<TestEntityA>()
+                    //        .IgnoreBase(typeof(EntityBase<>))
+                    //        .UseOverridesFromAssemblyOf<Program>()
+                    //        .Conventions.AddFromAssemblyOf<Program>()
+                    //    );
+                    //m.AutoMappings.First().MergeMappings = true;                    
+                    //m.AutoMappings.ExportTo("mappings");
 
-
+                    m.FluentMappings.AddFromAssemblyOf<RoleMap>();
                 }
 
 

@@ -5,35 +5,46 @@ using System.Text;
 using Console;
 using Domain;
 using FluentNHibernate.Testing;
+using NHibernate;
 using NUnit.Framework;
+using System.Collections;
 
 namespace Tests
 {
     [TestFixture]
     public class Class1
     {
+        private ISessionFactory _sessionFactory;
+
         [TestFixtureSetUp]
         public void FixtureSetUp()
         {
             HibernatingRhinos.NHibernate.Profiler.Appender.NHibernateProfiler.Initialize();
+            _sessionFactory = Setup.CreateSessionFactory();
         }
 
         [Test]
         public void CanSaveChildEntities()
         {
-            var sessionFactory = Setup.CreateSessionFactory();
-
-            IList<TestEntityB> list = new List<TestEntityB> { new TestEntityB{Comment = "Test"}};
-
-            using (var session = sessionFactory.OpenSession())
+            using (var session = _sessionFactory.OpenSession())
+            using (var tx = session.BeginTransaction())
             {
-                var a = new TestEntityA {Name = "testA"};
-                var b = new TestEntityB {Comment = "commentB"};
-                a.AddChild(b);
+                Role r;
+                Privilege p = new Privilege();                
+                p.Path = "*.a";
+                foreach (DefaultRoleNames name in Enum.GetValues(typeof
+     (DefaultRoleNames)))
+                {
+                    r = new Role();
+                    r.TypeOfContent = typeof (Privilege);
+                    r.Name = name;
+                    r.AddPrivilege(p); ;
+                    session.Save(r);
+                }
 
-                session.Save(a);                
-                
+                tx.Commit();
             }
         }
+
     }
 }

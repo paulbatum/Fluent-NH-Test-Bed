@@ -1,68 +1,60 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Domain
 {
-    public class EntityBase<T> : PersistentBase
-    {
-        private T _id = default(T);
 
-        public virtual T Id
+    public interface IAggregateRoot
+    {
+
+    }
+
+    public enum DefaultRoleNames
+    {
+        Role1,
+        Role2,
+        Role3
+    }
+
+    public class Role : IAggregateRoot
+    {
+        public virtual int Id { get; private set; }
+        public virtual DefaultRoleNames Name { get; set; }
+        public virtual IList<Privilege> Privileges { get; set; }
+
+        private string _typeOfContent;
+
+        public virtual Type TypeOfContent
         {
-            get
-            {
-                return _id;
-            }
-            private set
-            {
-                _id = value;
-            }
+            get { return Type.GetType(_typeOfContent); }
+            set { _typeOfContent = value.FullName; }
+        }
+
+        public Role()
+        {
+            Privileges = new List<Privilege>();
+        }
+
+        public virtual void AddPrivilege(Privilege privilege)
+        {
+            privilege.RolesWithThisPrivilege.Add(this);
+            Privileges.Add(privilege);
         }
     }
 
-    public abstract class PersistentBase
-    {}
-
-    public class TestEntityA : EntityBase<int>
+    public class Privilege : IAggregateRoot
     {
-        private string _name;
-
-        public virtual string Name
+        public virtual int Id { get; private set; }
+        public virtual string Path { get; set; }
+        public virtual IList<Role> RolesWithThisPrivilege
         {
-            get { return _name; }
-            set { _name = value; }
+            get;
+            private set;
         }
 
-        private IList<TestEntityB> _children = new List<TestEntityB>();
-
-        public virtual IEnumerable<TestEntityB> Children
+        public Privilege()
         {
-            get { return _children; }
-            //protected set { _children = value.ToList(); }
-        }
-
-        public virtual void AddChild(TestEntityB b)
-        {
-            _children.Add(b);
-            b.TestEntityA = this;
-        }
-    }
-
-    public class TestEntityB : EntityBase<int>
-    {
-        private string _comment;
-
-        public virtual string Comment
-        {
-            get { return _comment; }
-            set { _comment = value; }
-        }
-
-        private TestEntityA _testEntityA = null;
-
-        public virtual TestEntityA TestEntityA
-        {
-            get { return _testEntityA; }
-            set { _testEntityA = value; }
+            RolesWithThisPrivilege = new List<Role>();
         }
     }
 }
