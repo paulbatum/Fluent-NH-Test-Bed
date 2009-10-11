@@ -1,38 +1,22 @@
-﻿using FluentNHibernate.Conventions;
+﻿using System.Linq;
+using System.Text;
+using FluentNHibernate.Conventions;
 using FluentNHibernate.Conventions.Inspections;
 using FluentNHibernate.Conventions.Instances;
 
 namespace Console
 {
-    public class AccessAsUnderscoredCamelCaseFieldConvention :
-        IPropertyConvention, IHasManyConvention, IReferenceConvention
+    public class JoinedSubclassConvention : IJoinedSubclassConvention
     {
-        #region IHasManyConvention Members
-
-        public void Apply(IOneToManyCollectionInstance instance)
+        public void Apply(IJoinedSubclassInstance instance)
         {
-            instance.Access.ReadOnlyPropertyThroughCamelCaseField(CamelCasePrefix.Underscore);
-            //instance.Access.CamelCaseField(CamelCasePrefix.Underscore);
+            StringBuilder keyName = new StringBuilder();
+            keyName.Append("FK_");
+            keyName.Append(instance.EntityType.Name);
+            keyName.Append("_");
+            keyName.Append(instance.Key.Columns.First().Name);
+            keyName.Remove(keyName.Length - 2, 2);
+            instance.Key.ForeignKey(keyName.ToString());
         }
-
-        #endregion
-
-        #region IPropertyConvention Members
-
-        public void Apply(IPropertyInstance instance)
-        {
-            instance.Access.ReadOnlyPropertyThroughCamelCaseField(CamelCasePrefix.Underscore);
-        }
-
-        #endregion
-
-        #region IReferenceConvention Members
-
-        public void Apply(IManyToOneInstance instance)
-        {
-            instance.Access.ReadOnlyPropertyThroughCamelCaseField(CamelCasePrefix.Underscore);
-        }
-
-        #endregion
     }
 }

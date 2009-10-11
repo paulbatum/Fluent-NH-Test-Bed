@@ -7,33 +7,25 @@ using FluentNHibernate.Mapping;
 
 namespace Console
 {
-    public class RoleMap : ClassMap<Role>
+    public class CustomerMap : SubclassMap<Customer>
     {
-        public RoleMap()
+        public CustomerMap()
         {
-            Id(x => x.Id);
-            Map(x => x.Name).Not.Nullable();
-            Map(x => x.TypeOfContent)
-                .Access.CamelCaseField(Prefix.Underscore)
-                .CustomType<string>();
-            HasManyToMany(x => x.Privileges)
-                .Cascade.All()
-                .Table("RolePrivilege");
-            Table("roles");
+            KeyColumn("PersonID");
+            Map(x => x.CustomerSince).Not.Nullable();
         }
     }
 
-    public class PrivilegeMap : ClassMap<Privilege>
+    public class PersonMap : ClassMap<Person>
     {
-        public PrivilegeMap()
+        public PersonMap()
         {
             Id(x => x.Id);
-            Map(x => x.Path).Not.Nullable();
-            HasManyToMany(x => x.RolesWithThisPrivilege)
-                .Cascade.All()
-                .Inverse()
-                .Table("RolePrivilege");
-            Table("privileges");
+            Map(x => x.FirstName).Not.Nullable();
+            Map(x => x.MiddleInitial);
+            Map(x => x.LastName).Not.Nullable();
+            Map(x => x.DOB);
+            Map(x => x.Email);
         }
     }
 }

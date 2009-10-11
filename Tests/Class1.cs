@@ -29,19 +29,8 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                Role r;
-                Privilege p = new Privilege();                
-                p.Path = "*.a";
-                foreach (DefaultRoleNames name in Enum.GetValues(typeof
-     (DefaultRoleNames)))
-                {
-                    r = new Role();
-                    r.TypeOfContent = typeof (Privilege);
-                    r.Name = name;
-                    r.AddPrivilege(p); ;
-                    session.Save(r);
-                }
-
+                //Person p = new Person { FirstName = "paul", LastName = "batum"};
+                //session.Save(p);
                 tx.Commit();
             }
         }

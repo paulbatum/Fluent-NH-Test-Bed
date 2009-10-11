@@ -20,11 +20,14 @@ namespace Console
 
         public static ISessionFactory CreateSessionFactory()
         {
-            _dbFile = "firstProject.db";
+            //_dbFile = "firstProject.db";
             return Fluently.Configure()
                 .Database(
-                SQLiteConfiguration.Standard
-                    .UsingFile(_dbFile)
+                    MsSqlConfiguration.MsSql2005
+                    .ConnectionString(c => c.Server(@"localhost\sqlexpress")
+                                               .Database("TestDB")
+                                               .TrustedConnection()
+                                               )                                               
                     .ShowSql()
                 )
                 .Mappings(m =>
@@ -38,7 +41,9 @@ namespace Console
                     //m.AutoMappings.First().MergeMappings = true;                    
                     //m.AutoMappings.ExportTo("mappings");
 
-                    m.FluentMappings.AddFromAssemblyOf<RoleMap>();
+                    m.FluentMappings.AddFromAssemblyOf<Program>();
+                    m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
+                    m.FluentMappings.ExportTo("mappings");
                 }
 
 
