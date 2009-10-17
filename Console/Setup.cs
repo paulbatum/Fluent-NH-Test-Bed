@@ -15,35 +15,33 @@ namespace Console
 {
     public class Setup
     {
-        private static string _dbFile;
+        private static string _dbFile = "firstProject.db";
 
 
         public static ISessionFactory CreateSessionFactory()
         {
-            //_dbFile = "firstProject.db";
             return Fluently.Configure()
                 .Database(
-                    MsSqlConfiguration.MsSql2005
-                    .ConnectionString(c => c.Server(@"localhost\sqlexpress")
-                                               .Database("TestDB")
-                                               .TrustedConnection()
-                                               )                                               
-                    .ShowSql()
+                    SQLiteConfiguration.Standard
+                        .UsingFile(_dbFile)
+                        .ShowSql()                
                 )
                 .Mappings(m =>
-                {                    
-                    //m.AutoMappings.Add(
-                    //    AutoMap.AssemblyOf<TestEntityA>()
-                    //        .IgnoreBase(typeof(EntityBase<>))
-                    //        .UseOverridesFromAssemblyOf<Program>()
-                    //        .Conventions.AddFromAssemblyOf<Program>()
-                    //    );
-                    //m.AutoMappings.First().MergeMappings = true;                    
-                    //m.AutoMappings.ExportTo("mappings");
+                {
+                    m.AutoMappings.Add(
+                        AutoMap.AssemblyOf<Customer>()
+                            .Where(t => t.Namespace == "Domain")
+                            .Setup(e => e.IsComponentType = x => x == typeof(Address))
+                            //.IgnoreBase(typeof(EntityBase<>))                            
+                            //.UseOverridesFromAssemblyOf<Program>()
+                            //.Conventions.AddFromAssemblyOf<Program>()
+                        );
+                    m.AutoMappings.First().MergeMappings = true;
+                    m.AutoMappings.ExportTo("mappings");
 
-                    m.FluentMappings.AddFromAssemblyOf<Program>();
-                    m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
-                    m.FluentMappings.ExportTo("mappings");
+                    //m.FluentMappings.AddFromAssemblyOf<Program>();
+                    //m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
+                    //m.FluentMappings.ExportTo("mappings");
                 }
 
 
