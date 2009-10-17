@@ -7,12 +7,13 @@ namespace Domain
     {
         public virtual int Id { get; set; }
         public virtual string FirstName { get; set; }
-        public virtual Address Address { get; set; }
+        public virtual IList<Order> Orders { get; set; }
     }
 
-    public class Address
+    public class Order
     {
-        public virtual string Street { get; set; }
-        public virtual string Suburb { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int Quantity { get; set; }
+
     }
 }

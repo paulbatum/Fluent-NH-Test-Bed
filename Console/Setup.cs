@@ -30,11 +30,10 @@ namespace Console
                 {
                     m.AutoMappings.Add(
                         AutoMap.AssemblyOf<Customer>()
-                            .Where(t => t.Namespace == "Domain")
-                            .Setup(e => e.IsComponentType = x => x == typeof(Address))
+                            .Where(t => t.Namespace == "Domain")                            
                             //.IgnoreBase(typeof(EntityBase<>))                            
                             //.UseOverridesFromAssemblyOf<Program>()
-                            //.Conventions.AddFromAssemblyOf<Program>()
+                            .Conventions.AddFromAssemblyOf<Program>()
                         );
                     m.AutoMappings.First().MergeMappings = true;
                     m.AutoMappings.ExportTo("mappings");
