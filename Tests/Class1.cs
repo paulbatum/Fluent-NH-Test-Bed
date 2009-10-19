@@ -24,15 +24,36 @@ namespace Tests
         }
 
         [Test]
-        public void CanSaveChildEntities()
+        public void Test1()
         {
+            int id;
+
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                //Person p = new Person { FirstName = "paul", LastName = "batum"};
-                //session.Save(p);
+ 
+                var c = new Customer
+                {
+                    FirstName = "Paul",
+                    Orders =
+                        {
+                            new Order
+                            {
+                                Quantity = 5
+                            }
+                        }
+                };
+                session.Save(c);
                 tx.Commit();
+
+                id = c.Id;
             }
+
+             using (var session = _sessionFactory.OpenSession())
+             {
+                 var c2 = session.Get<Customer>(id);
+                 System.Diagnostics.Debug.WriteLine(c2.FirstName);
+             }
         }
 
     }

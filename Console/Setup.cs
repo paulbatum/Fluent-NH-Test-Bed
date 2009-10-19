@@ -21,23 +21,30 @@ namespace Console
         public static ISessionFactory CreateSessionFactory()
         {
             return Fluently.Configure()
-                .Database(
-                    SQLiteConfiguration.Standard
-                        .UsingFile(_dbFile)
-                        .ShowSql()                
+                //.Database(
+                //    SQLiteConfiguration.Standard
+                //        .UsingFile(_dbFile)
+                //        .ShowSql()                
+                //)
+                 .Database(
+                    MsSqlConfiguration.MsSql2005
+                    .ConnectionString(c => c.Server(@"localhost\sqlexpress")
+                                               .Database("TestDB")
+                                               .TrustedConnection()
+                                               )
+                    .ShowSql()
                 )
                 .Mappings(m =>
                 {
                     m.AutoMappings.Add(
                         AutoMap.AssemblyOf<Customer>()
                             .Where(t => t.Namespace == "Domain")                            
-                            //.IgnoreBase(typeof(EntityBase<>))                            
-                            //.UseOverridesFromAssemblyOf<Program>()
-                            .Conventions.AddFromAssemblyOf<Program>()
+                            .UseOverridesFromAssemblyOf<Program>()
+                            .Conventions.AddFromAssemblyOf<Program>()                                      
                         );
                     m.AutoMappings.First().MergeMappings = true;
                     m.AutoMappings.ExportTo("mappings");
-
+                    
                     //m.FluentMappings.AddFromAssemblyOf<Program>();
                     //m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
                     //m.FluentMappings.ExportTo("mappings");
