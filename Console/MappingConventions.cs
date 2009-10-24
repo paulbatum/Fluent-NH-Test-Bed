@@ -8,12 +8,6 @@ using FluentNHibernate.Conventions.Instances;
 
 namespace Console
 {
-    public class CascadeAllConvention : IHasManyConvention
-    {
-        public void Apply(IOneToManyCollectionInstance instance)
-        {
-            instance.Cascade.All();
-        }
-    }
+   
     
 }

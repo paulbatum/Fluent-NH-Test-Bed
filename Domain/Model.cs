@@ -3,25 +3,19 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public abstract class Entity
+    public abstract class EntityBase
     {
-        public virtual int Id { get; set; }
-        public virtual DateTime Version { get; set; }
+        public int Key { get; set; }
     }
 
-    public class Customer : Entity
+    public class Job : EntityBase
     {
-        public virtual string FirstName { get; set; }
-        public virtual IList<Order> Orders { get; set; }
-
-        public Customer()
-        {
-            Orders = new List<Order>();
-        }
+        public double NotServedPenalty { get; set; }
+        public IList<Stop> Stops { get; set; }
     }
 
-    public class Order : Entity
+    public class Stop : EntityBase
     {
-        public virtual int Quantity { get; set; }
+        
     }
 }

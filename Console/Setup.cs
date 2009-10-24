@@ -7,6 +7,7 @@ using Domain;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using FluentNHibernate.Conventions.Helpers;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
@@ -28,18 +29,19 @@ namespace Console
                 )
                 .Mappings(m =>
                 {
-                    m.AutoMappings.Add(
-                        AutoMap.AssemblyOf<Customer>()
-                            .Where(t => t.Namespace == "Domain")                            
-                            .UseOverridesFromAssemblyOf<Program>()
-                            .Conventions.AddFromAssemblyOf<Program>()                                      
-                        );
-                    m.AutoMappings.First().MergeMappings = true;
-                    m.AutoMappings.ExportTo("mappings");
-                    
-                    //m.FluentMappings.AddFromAssemblyOf<Program>();
-                    //m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
-                    //m.FluentMappings.ExportTo("mappings");
+                    //m.AutoMappings.Add(
+                    //    AutoMap.AssemblyOf<Customer>()
+                    //        .Where(t => t.Namespace == "Domain")                            
+                    //        .UseOverridesFromAssemblyOf<Program>()
+                    //        .Conventions.AddFromAssemblyOf<Program>()                                      
+                    //    );
+                    //m.AutoMappings.First().MergeMappings = true;
+                    //m.AutoMappings.ExportTo("mappings");
+
+                    m.FluentMappings.AddFromAssemblyOf<Program>();
+                    m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
+                    m.FluentMappings.PersistenceModel.Conventions.Add(DefaultLazy.Never());
+                    m.FluentMappings.ExportTo("mappings");
                 })                
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();

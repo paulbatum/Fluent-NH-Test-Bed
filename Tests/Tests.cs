@@ -12,7 +12,7 @@ using System.Collections;
 namespace Tests
 {
     [TestFixture]
-    public class Class1
+    public class Tests
     {
         private ISessionFactory _sessionFactory;
 
@@ -26,34 +26,11 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            int id;
-
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
- 
-                var c = new Customer
-                {
-                    FirstName = "Paul",
-                    Orders =
-                        {
-                            new Order
-                            {
-                                Quantity = 5
-                            }
-                        }
-                };
-                session.Save(c);
-                tx.Commit();
-
-                id = c.Id;
+               tx.Commit();
             }
-
-             using (var session = _sessionFactory.OpenSession())
-             {
-                 var c2 = session.Get<Customer>(id);
-                 System.Diagnostics.Debug.WriteLine(c2.FirstName);
-             }
         }
 
     }
