@@ -7,30 +7,22 @@ using FluentNHibernate.Mapping;
 
 namespace Console
 {
-    public class EntityBaseMap<T> : ClassMap<T> where T : EntityBase
-    {
-        public EntityBaseMap()
-        {
-            Id(x => x.Key);
-        }
-    }
+   public class TripMap : ClassMap<Trip>
+   {
+       public TripMap()
+       {
+           Id(x => x.Id);
+           Component(x => x.Origin, c =>
+           {
+               c.Map(x => x.X).Column("OriginX");
+               c.Map(x => x.Y).Column("OriginY");
+           });
+           Component(x => x.Destination, c =>
+           {
+               c.Map(x => x.X).Column("DestinationX");
+               c.Map(x => x.Y).Column("DestinationY");
+           });
 
-    public class JobMap : EntityBaseMap<Job>
-    {
-        public JobMap()
-        {
-            Map(x => x.NotServedPenalty);
-            HasMany(x => x.Stops)
-                .Inverse()
-                .Cascade.All();
-        }
-    }
-
-    public class StopMap : EntityBaseMap<Stop>
-    {
-        public StopMap()
-        {
-            
-        }
-    }
+       }
+   }
 }

@@ -3,19 +3,16 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public abstract class EntityBase
+    public class Coordinate
     {
-        public int Key { get; set; }
+        public decimal X { get; set; }
+        public decimal Y { get; set; }
     }
 
-    public class Job : EntityBase
+    public class Trip
     {
-        public double NotServedPenalty { get; set; }
-        public IList<Stop> Stops { get; set; }
-    }
-
-    public class Stop : EntityBase
-    {
-        
+        public int Id { get; set; }
+        public Coordinate Origin { get; set; }
+        public Coordinate Destination { get; set; }
     }
 }
