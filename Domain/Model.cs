@@ -3,16 +3,15 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Coordinate
-    {
-        public decimal X { get; set; }
-        public decimal Y { get; set; }
-    }
-
-    public class Trip
+    public class Order
     {
         public int Id { get; set; }
-        public Coordinate Origin { get; set; }
-        public Coordinate Destination { get; set; }
+        public int Quantity { get; set; }
+    }
+
+    public class Customer
+    {
+        public int Id { get; set; }
+        public IDictionary<Order, bool> Orders { get; set; }
     }
 }
