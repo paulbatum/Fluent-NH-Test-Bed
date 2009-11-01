@@ -21,6 +21,9 @@ namespace Console
 
         public static ISessionFactory CreateSessionFactory()
         {
+            if (!Directory.Exists("mappings"))
+                Directory.CreateDirectory("mappings");
+
             return Fluently.Configure()
                 .Database(
                     SQLiteConfiguration.Standard
