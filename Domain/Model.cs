@@ -3,15 +3,36 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Order
+    public class Foo
     {
-        public int Id { get; set; }
-        public int Quantity { get; set; }
+        public virtual int Id
+        {
+            get;
+            protected set;
+        }
+        public virtual IBar Bar
+        {
+            get;
+            set;
+        }
     }
 
-    public class Customer
+    public interface IBar
     {
-        public int Id { get; set; }
-        public IDictionary<Order, bool> Orders { get; set; }
+        string Text
+        {
+            get;
+            set;
+        }
     }
+
+    public class Bar : IBar
+    {
+        public virtual string Text
+        {
+            get;
+            set;
+        }
+    }
+
 }

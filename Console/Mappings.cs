@@ -7,24 +7,17 @@ using FluentNHibernate.Mapping;
 
 namespace Console
 {
-    public class CustomerMap : ClassMap<Customer>
+    public class FooMap : ClassMap<Foo>
     {
-        public CustomerMap()
+        public FooMap()
         {
             Id(x => x.Id);
-            HasMany<Order>(x => x.Orders)
-                .AsEntityMap()
-                .Element("boolvalue", ep => ep.Type<bool>());
-        }
 
-    }
-
-    public class OrderMap : ClassMap<Order>
-    {
-        public OrderMap()
-        {
-            Id(x => x.Id);
-            Map(x => x.Quantity);
+            Component<Bar>(x => x.Bar, m =>
+            {
+                m.Map(x => x.Text);
+            });
         }
     }
+
 }

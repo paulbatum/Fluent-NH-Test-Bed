@@ -29,7 +29,12 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-               tx.Commit();
+                Foo f = new Foo();
+                f.Bar = new Bar();
+                f.Bar.Text = "sometext";
+
+                session.Save(f);
+                tx.Commit();
             }
         }
 
