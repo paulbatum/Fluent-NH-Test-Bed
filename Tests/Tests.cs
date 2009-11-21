@@ -26,15 +26,28 @@ namespace Tests
         [Test]
         public void Test1()
         {
+            int id = 0;
+
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                Foo f = new Foo();
-                f.Bar = new Bar();
-                f.Bar.Text = "sometext";
-
-                session.Save(f);
+                Store s = new Store();
+                s.AddStaff(new Employee { FirstName = "Staff1"});
+                s.AddStaff(new Employee { FirstName = "Staff2" });
+                s.AddManager(new Employee { FirstName = "Manager1" });
+                
+                session.Save(s);
+                id = s.Id;
                 tx.Commit();
+            }
+
+            using (var session = _sessionFactory.OpenSession())
+            using (var tx = session.BeginTransaction())
+            {
+                Store s = session.Get<Store>(id);
+                Assert.AreEqual(2, s.Staff.Count);
+                Assert.AreEqual(1, s.Managers.Count);
+
             }
         }
 

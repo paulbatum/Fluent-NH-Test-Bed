@@ -32,19 +32,20 @@ namespace Console
                 )
                 .Mappings(m =>
                 {
-                    //m.AutoMappings.Add(
-                    //    AutoMap.AssemblyOf<Customer>()
-                    //        .Where(t => t.Namespace == "Domain")                            
-                    //        .UseOverridesFromAssemblyOf<Program>()
-                    //        .Conventions.AddFromAssemblyOf<Program>()                                      
-                    //    );
-                    //m.AutoMappings.First().MergeMappings = true;
-                    //m.AutoMappings.ExportTo("mappings");
+                    m.AutoMappings.Add(
+                        AutoMap.AssemblyOf<Store>()
+                            .Where(t => t.Namespace == "Domain")
+                            .UseOverridesFromAssemblyOf<Program>()
+                            .Conventions.Add(DefaultLazy.Never())
+                            .Conventions.AddFromAssemblyOf<Program>()
+                        );
+                    m.AutoMappings.First().MergeMappings = true;
+                    m.AutoMappings.ExportTo("mappings");
 
-                    m.FluentMappings.AddFromAssemblyOf<Program>();
-                    m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
-                    m.FluentMappings.PersistenceModel.Conventions.Add(DefaultLazy.Never());
-                    m.FluentMappings.ExportTo("mappings");
+                    //m.FluentMappings.AddFromAssemblyOf<Program>();
+                    //m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
+                    //m.FluentMappings.PersistenceModel.Conventions.Add(DefaultLazy.Never());
+                    //m.FluentMappings.ExportTo("mappings");
                 })                
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();

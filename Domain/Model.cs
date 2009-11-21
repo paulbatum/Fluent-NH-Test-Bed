@@ -3,36 +3,38 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Foo
+    public class Employee
     {
-        public virtual int Id
-        {
-            get;
-            protected set;
-        }
-        public virtual IBar Bar
-        {
-            get;
-            set;
-        }
+        public virtual int Id { get; private set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual bool IsManager { get; set; }
+
     }
 
-    public interface IBar
+    public class Store
     {
-        string Text
-        {
-            get;
-            set;
-        }
-    }
+        public virtual int Id { get; private set; }
+        public virtual IList<Employee> Staff { get; private set; }
+        public virtual IList<Employee> Managers { get; private set; }
 
-    public class Bar : IBar
-    {
-        public virtual string Text
+        public Store()
         {
-            get;
-            set;
+            Staff = new List<Employee>();
+            Managers = new List<Employee>();
         }
+
+        public void AddManager(Employee employee)
+        {
+            employee.IsManager = true;
+            this.Managers.Add(employee);
+        }
+
+        public void AddStaff(Employee employee)
+        {
+            this.Staff.Add(employee);
+        }
+
     }
 
 }
