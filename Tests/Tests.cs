@@ -31,23 +31,21 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                Store s = new Store();
-                s.AddStaff(new Employee { FirstName = "Staff1"});
-                s.AddStaff(new Employee { FirstName = "Staff2" });
-                s.AddManager(new Employee { FirstName = "Manager1" });
+                var sheet = new CashBalanceSheet();
+                sheet.Transactions.Add(new Transaction { DollarAmount = 500, TransactionDate = DateTime.Now});
                 
-                session.Save(s);
-                id = s.Id;
+                session.Save(sheet);
+                id = sheet.ClaimId;
                 tx.Commit();
             }
 
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                Store s = session.Get<Store>(id);
-                Assert.AreEqual(2, s.Staff.Count);
-                Assert.AreEqual(1, s.Managers.Count);
+                var sheet = session.Get<CashBalanceSheet>(id);
+                sheet.Transactions.Remove(sheet.Transactions.First());
 
+                tx.Commit();
             }
         }
 
