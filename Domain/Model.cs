@@ -3,22 +3,23 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class CashBalanceSheet
+    public class Customer
     {
-        public virtual int ClaimId { get; set; }
-        public virtual IList<Transaction> Transactions { get; set; }
+        public int ID { get; set; }
+        public virtual string Name { get; set; }
+        public virtual CreditCard CreditCard { get; private set; }
 
-        public CashBalanceSheet()
+        public virtual void AddCreditCard(CreditCard c)
         {
-            Transactions = new List<Transaction>();
+            CreditCard = c;
+            c.Customer = this;
         }
     }
 
-    public class Transaction
+    public class CreditCard
     {
-        public virtual int? TransactionId { get; set; }
-        public virtual DateTime TransactionDate { get; set; }
-        public virtual decimal DollarAmount { get; set; }
+        public int ID { get; set; }
+        public virtual Customer Customer { get; internal set; }
     }
 
 }

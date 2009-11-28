@@ -7,24 +7,24 @@ using FluentNHibernate.Mapping;
 
 namespace Console
 {
-    public class CashBalanceSheet_Map : ClassMap<CashBalanceSheet>
+    public class CustomerMap : ClassMap<Customer>
     {
-        public CashBalanceSheet_Map()
-        {
-            Table("Claim");
-            Id(x => x.ClaimId).GeneratedBy.Native();
-            HasMany(x => x.Transactions).KeyColumn("ClaimId")
-                .Cascade.AllDeleteOrphan().Not.LazyLoad();
+        public CustomerMap()
+        {            
+            Id(x => x.ID);
+            HasOne(x => x.CreditCard)
+                .PropertyRef(x => x.Customer)
+                .Cascade.All();
         }
     }
 
-    public class Transaction_Map : ClassMap<Transaction>
+    public class CreditCardMap : ClassMap<CreditCard>
     {
-        public Transaction_Map()
+        public CreditCardMap()
         {
-            Id(x => x.TransactionId).GeneratedBy.Native();
-            Map(x => x.DollarAmount);
-            Map(x => x.TransactionDate).Not.Nullable();
+            Id(x => x.ID);
+            References(x => x.Customer)
+                .Unique();
         }
     }
 }
