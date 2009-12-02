@@ -5,14 +5,13 @@ namespace Domain
 {
     public class Customer
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
         public virtual string Name { get; set; }
-        public virtual CreditCard CreditCard { get; private set; }
+        public virtual IList<CreditCard> CreditCards { get; private set; }
 
-        public virtual void AddCreditCard(CreditCard c)
+        public Customer()
         {
-            CreditCard = c;
-            c.Customer = this;
+            CreditCards = new List<CreditCard>();
         }
     }
 

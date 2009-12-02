@@ -26,9 +26,15 @@ namespace Console
 
             return Fluently.Configure()
                 .Database(
-                    SQLiteConfiguration.Standard
-                        .UsingFile(_dbFile)
-                        .ShowSql()
+                    //SQLiteConfiguration.Standard
+                    //    .UsingFile(_dbFile)
+
+                    MsSqlConfiguration.MsSql2005
+                        .ConnectionString(c => c.Server(@"localhost\sqlexpress")
+                                               .Database("TestDB")
+                                               .TrustedConnection()
+                                               )
+                    .ShowSql()
                 )
                 .Mappings(m =>
                 {
@@ -46,7 +52,7 @@ namespace Console
                     m.FluentMappings.Conventions.AddFromAssemblyOf<Program>();
                     m.FluentMappings.PersistenceModel.Conventions.Add(DefaultLazy.Never());
                     m.FluentMappings.ExportTo("mappings");
-                })                
+                })
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
         }

@@ -26,16 +26,16 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            int customerId = 0;
+            string customerId = "";
             int cardId = 0;
 
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer = new Customer();
+                var customer = new Customer { ID = "Cust1" };
                 var creditCard = new CreditCard();
 
-                customer.AddCreditCard(creditCard);
+                customer.CreditCards.Add(creditCard);
 
                 session.Save(customer);
                 customerId = customer.ID;
@@ -46,19 +46,11 @@ namespace Tests
             using (var tx = session.BeginTransaction())
             {
                 var customer = session.Get<Customer>(customerId);
-                Assert.NotNull(customer.CreditCard);
-
-                cardId = customer.CreditCard.ID;
-                session.Delete(customer);
-                tx.Commit();
+                Assert.AreEqual(1, customer.CreditCards.Count);
             }
 
-            using (var session = _sessionFactory.OpenSession())
-            using (var tx = session.BeginTransaction())
-            {
-                var card = session.Get<CreditCard>(cardId);
-                Assert.IsNull(card);
-            }
+
+
         }
 
     }

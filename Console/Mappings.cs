@@ -10,11 +10,10 @@ namespace Console
     public class CustomerMap : ClassMap<Customer>
     {
         public CustomerMap()
-        {            
-            Id(x => x.ID);
-            HasOne(x => x.CreditCard)
-                .PropertyRef(x => x.Customer)
-                .Cascade.All();
+        {
+            Id(x => x.ID).CustomSqlType("VARCHAR(10)");
+            HasMany(x => x.CreditCards)
+                .Cascade.All();                
         }
     }
 
@@ -23,8 +22,7 @@ namespace Console
         public CreditCardMap()
         {
             Id(x => x.ID);
-            References(x => x.Customer)
-                .Unique();
+            References(x => x.Customer);
         }
     }
 }
