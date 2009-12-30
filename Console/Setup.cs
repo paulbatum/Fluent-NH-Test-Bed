@@ -26,14 +26,14 @@ namespace Console
 
             return Fluently.Configure()
                 .Database(
-                    //SQLiteConfiguration.Standard
-                    //    .UsingFile(_dbFile)
+                    SQLiteConfiguration.Standard
+                        .UsingFile(_dbFile)
 
-                    MsSqlConfiguration.MsSql2005
-                        .ConnectionString(c => c.Server(@"localhost\sqlexpress")
-                                               .Database("TestDB")
-                                               .TrustedConnection()
-                                               )
+                    //MsSqlConfiguration.MsSql2005
+                    //    .ConnectionString(c => c.Server(@"localhost\sqlexpress")
+                    //                           .Database("TestDB")
+                    //                           .TrustedConnection()
+                    //                           )
                     .ShowSql()
                 )
                 .Mappings(m =>

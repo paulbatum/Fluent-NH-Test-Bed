@@ -11,18 +11,11 @@ namespace Console
     {
         public CustomerMap()
         {
-            Id(x => x.ID).CustomSqlType("VARCHAR(10)");
-            HasMany(x => x.CreditCards)
-                .Cascade.All();                
+            Id(x => x.CustomerId);
+            Map(x => x.Birthday);
+            
         }
     }
 
-    public class CreditCardMap : ClassMap<CreditCard>
-    {
-        public CreditCardMap()
-        {
-            Id(x => x.ID);
-            References(x => x.Customer);
-        }
-    }
+
 }

@@ -26,29 +26,19 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            string customerId = "";
-            int cardId = 0;
-
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer = new Customer { ID = "Cust1" };
-                var creditCard = new CreditCard();
-
-                customer.CreditCards.Add(creditCard);
-
+                var customer = new Customer()
+                {
+                    Birthday = DateTime.Today,
+                    FirstName = "Paul",
+                    LastName = "Batum"
+                };
+                
                 session.Save(customer);
-                customerId = customer.ID;
                 tx.Commit();
             }
-
-            using (var session = _sessionFactory.OpenSession())
-            using (var tx = session.BeginTransaction())
-            {
-                var customer = session.Get<Customer>(customerId);
-                Assert.AreEqual(1, customer.CreditCards.Count);
-            }
-
 
 
         }
