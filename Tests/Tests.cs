@@ -29,14 +29,24 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer = new Customer()
+                var customer1 = new Customer()
                 {
                     Birthday = DateTime.Today,
-                    FirstName = "Paul",
-                    LastName = "Batum"
+                    FirstName = "Parent"
                 };
-                
-                session.Save(customer);
+
+                var customer2 = new Customer()
+                {
+                    Birthday = DateTime.Today,
+                    FirstName = "Child"
+                };
+
+                customer1.Children.Add(customer2);
+                customer2.Parents.Add(customer1);
+
+                session.Save(customer1);
+                session.Save(customer2);
+
                 tx.Commit();
             }
 

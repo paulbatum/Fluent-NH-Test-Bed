@@ -13,7 +13,16 @@ namespace Console
         {
             Id(x => x.CustomerId);
             Map(x => x.Birthday);
+            Map(x => x.FirstName);
+
+            HasManyToMany(x => x.Parents)
+                .ParentKeyColumn("ChildID")
+                .ChildKeyColumn("ParentID")
+                .Inverse();
             
+            HasManyToMany(x => x.Children)
+                .ParentKeyColumn("ParentID")
+                .ChildKeyColumn("ChildID");
         }
     }
 
