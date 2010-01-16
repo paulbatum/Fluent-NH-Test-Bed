@@ -3,20 +3,33 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Customer
+    public abstract class Entity
     {
-        public virtual int CustomerId { get; set; }
-        public virtual string FirstName { get; set; }
-        public virtual DateTime Birthday { get; set; }
+        public int Id { get; set; }
+    }
 
-        public virtual IList<Customer> Parents { get; set; }
-        public virtual IList<Customer> Children { get; set; }
+    public abstract class Debt : Entity
+    {        
+        public decimal Balance { get; set; }
+    }
 
-        public Customer()
+    public class CarLoan : Debt
+    {
+        
+    }
+
+    public class CreditCard : Debt
+    {
+        
+    }
+
+    public class LoanApplication : Entity
+    {
+        public IList<Debt> ExistingDebts { get; set; }
+
+        public LoanApplication()
         {
-            Parents = new List<Customer>();
-            Children = new List<Customer>();
-
+            ExistingDebts = new List<Debt>();
         }
     }
 

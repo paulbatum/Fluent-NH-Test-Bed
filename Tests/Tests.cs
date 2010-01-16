@@ -29,27 +29,22 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer1 = new Customer()
-                {
-                    Birthday = DateTime.Today,
-                    FirstName = "Parent"
-                };
+                var creditCard = new CreditCard { Balance = 2000 };
+                var carLoan = new CarLoan { Balance = 7000 };
 
-                var customer2 = new Customer()
-                {
-                    Birthday = DateTime.Today,
-                    FirstName = "Child"
-                };
+                var application = new LoanApplication { ExistingDebts = { creditCard, carLoan } };
 
-                customer1.Children.Add(customer2);
-                customer2.Parents.Add(customer1);
-
-                session.Save(customer1);
-                session.Save(customer2);
-
+                session.Save(application);
                 tx.Commit();
             }
 
+            using (var session = _sessionFactory.OpenSession())
+            using (var tx = session.BeginTransaction())
+            {
+                var application = session.Get<LoanApplication>(1);
+                Assert.That(application.ExistingDebts, Has.Count.EqualTo(2));
+
+            }
 
         }
 
