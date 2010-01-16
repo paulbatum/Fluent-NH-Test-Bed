@@ -50,6 +50,13 @@ namespace Tests
                 tx.Commit();
             }
 
+            using (var session = _sessionFactory.OpenSession())
+            using (var tx = session.BeginTransaction())
+            {
+                Customer parent = session.CreateQuery("from Customer cust where cust.FirstName = 'Parent'").UniqueResult<Customer>();
+                Assert.That(parent.Children.First().FirstName, Is.EqualTo("Child"));
+            }
+
 
         }
 
