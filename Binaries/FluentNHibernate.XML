@@ -59,10 +59,14 @@
             </summary>
             <param name="mapping">Automapping</param>
         </member>
-        <member name="T:FluentNHibernate.Automapping.ITypeSource">
+        <member name="T:FluentNHibernate.AssemblyTypeSource">
             <summary>
-            A source for Type instances, used for locating types that should be
-            automapped.
+            Facade over an assembly for retrieving type instances.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.ITypeSource">
+            <summary>
+            A source for Type instances, acts as a facade for an Assembly or as an alternative Type provider.
             </summary>
         </member>
         <member name="M:FluentNHibernate.Mapping.CompositeIdentityPart`1.KeyProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
@@ -116,6 +120,16 @@
             <summary>
             Set the access and naming strategy for this identity.
             </summary>
+        </member>
+        <member name="M:FluentNHibernate.Mapping.ClasslikeMapBase`1.Component``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Creates a component reference. This is a place-holder for a component that is defined externally with a
+            <see cref="T:FluentNHibernate.Mapping.ComponentMap`1"/>; the mapping defined in said <see cref="T:FluentNHibernate.Mapping.ComponentMap`1"/> will be merged
+            with any options you specify from this call.
+            </summary>
+            <typeparam name="TComponent">Component type</typeparam>
+            <param name="member">Property exposing the component</param>
+            <returns>Component reference builder</returns>
         </member>
         <member name="M:FluentNHibernate.Mapping.ClasslikeMapBase`1.Component``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Action{FluentNHibernate.Mapping.ComponentPart{``0}})">
             <summary>
@@ -372,11 +386,11 @@
             </summary>
             <param name="assembly">Assembly to load from</param>
         </member>
-        <member name="M:FluentNHibernate.Automapping.AutoPersistenceModel.AddTypeSource(FluentNHibernate.Automapping.ITypeSource)">
+        <member name="M:FluentNHibernate.Automapping.AutoPersistenceModel.AddTypeSource(FluentNHibernate.ITypeSource)">
             <summary>
-            Adds all entities from the <see cref="T:FluentNHibernate.Automapping.ITypeSource"/>.
+            Adds all entities from the <see cref="T:FluentNHibernate.ITypeSource"/>.
             </summary>
-            <param name="source"><see cref="T:FluentNHibernate.Automapping.ITypeSource"/> to load from</param>
+            <param name="source"><see cref="T:FluentNHibernate.ITypeSource"/> to load from</param>
         </member>
         <member name="M:FluentNHibernate.Automapping.AutoPersistenceModel.Override``1(System.Action{FluentNHibernate.Automapping.AutoMapping{``0}})">
             <summary>
@@ -453,6 +467,35 @@
             Inverts the next boolean
             </summary>
         </member>
+        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.ProxyFactoryFactory(System.String)">
+            <summary>
+            Sets the proxyfactory.factory_class property.
+            NOTE: NHibernate 2.1 only
+            </summary>
+            <param name="proxyFactoryFactoryClass">factory class</param>
+            <returns>Configuration</returns>
+        </member>
+        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.AdoNetBatchSize(System.Int32)">
+            <summary>
+            Sets the adonet.batch_size property.
+            </summary>
+            <param name="size">Batch size</param>
+            <returns>Configuration</returns>
+        </member>
+        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.CurrentSessionContext(System.String)">
+            <summary>
+            Sets the current_session_context_class property.
+            </summary>
+            <param name="currentSessionContextClass">current session context class</param>
+            <returns>Configuration</returns>
+        </member>
+        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.CurrentSessionContext``1">
+            <summary>
+            Sets the current_session_context_class property.
+            </summary>
+            <typeparam name="TSessionContext">Implementation of ICurrentSessionContext to use</typeparam>
+            <returns>Configuration</returns>
+        </member>
         <member name="T:FluentNHibernate.Conventions.AttributeCollectionConvention`1">
             <summary>
             Base class for attribute based conventions. Create a subclass of this to supply your own
@@ -491,16 +534,50 @@
             <param name="attribute">Instance of attribute found on property.</param>
             <param name="instance">Property with attribute</param>
         </member>
-        <member name="T:FluentNHibernate.Conventions.IHibernateMappingConvention">
+        <member name="T:FluentNHibernate.Conventions.IIdConvention">
             <summary>
-            Convention for the hibernate-mapping container for a class, this can be used to
-            set some class-wide settings such as lazy-load and access strategies.
+            Convention for identities, implement this interface to apply changes to
+            identity mappings.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IVersionConvention">
+            <summary>
+            Version convention, implement this interface to apply changes to vesion mappings.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IPropertyConvention">
+            <summary>
+            Property convention, implement this interface to apply changes to
+            property mappings.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IComponentConvention">
+            <summary>
+            Convention for a component mapping. Implement this interface to
+            apply changes to components.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IDynamicComponentConvention">
+            <summary>
+            Convention for dynamic components. Implement this member to apply changes
+            to dynamic components.
             </summary>
         </member>
         <member name="T:FluentNHibernate.Conventions.IReferenceConvention">
             <summary>
             Reference convention, implement this interface to apply changes to Reference/many-to-one
             relationships.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IHasOneConvention">
+            <summary>
+            HasOne convention, used for applying changes to one-to-one relationships.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Conventions.IHibernateMappingConvention">
+            <summary>
+            Convention for the hibernate-mapping container for a class, this can be used to
+            set some class-wide settings such as lazy-load and access strategies.
             </summary>
         </member>
         <member name="T:FluentNHibernate.Conventions.IJoinedSubclassConvention">
@@ -522,11 +599,6 @@
         <member name="T:FluentNHibernate.Conventions.ISubclassConvention">
             <summary>
             Subclass convention, implement this interface to alter subclass mappings.
-            </summary>
-        </member>
-        <member name="T:FluentNHibernate.Conventions.IHasOneConvention">
-            <summary>
-            HasOne convention, used for applying changes to one-to-one relationships.
             </summary>
         </member>
         <member name="M:FluentNHibernate.Conventions.ProxyConvention.Apply(FluentNHibernate.Conventions.Instances.IClassInstance)">
@@ -552,23 +624,6 @@
         <member name="M:FluentNHibernate.Conventions.ProxyConvention.Apply(FluentNHibernate.Conventions.Instances.IOneToOneInstance)">
             <summary>
             Apply changes to the target
-            </summary>
-        </member>
-        <member name="T:FluentNHibernate.Conventions.IVersionConvention">
-            <summary>
-            Version convention, implement this interface to apply changes to vesion mappings.
-            </summary>
-        </member>
-        <member name="T:FluentNHibernate.Conventions.IComponentConvention">
-            <summary>
-            Convention for a component mapping. Implement this interface to
-            apply changes to components.
-            </summary>
-        </member>
-        <member name="T:FluentNHibernate.Conventions.IDynamicComponentConvention">
-            <summary>
-            Convention for dynamic components. Implement this member to apply changes
-            to dynamic components.
             </summary>
         </member>
         <member name="P:FluentNHibernate.Conventions.Inspections.IInspector.StringIdentifierForModel">
@@ -824,18 +879,6 @@
             </summary>
             <param name="columnName">The column name to add</param>
         </member>
-        <member name="T:FluentNHibernate.Conventions.IIdConvention">
-            <summary>
-            Convention for identities, implement this interface to apply changes to
-            identity mappings.
-            </summary>
-        </member>
-        <member name="T:FluentNHibernate.Conventions.IPropertyConvention">
-            <summary>
-            Property convention, implement this interface to apply changes to
-            property mappings.
-            </summary>
-        </member>
         <member name="M:FluentNHibernate.Conventions.EnumerableExtensionsForConventions.Contains``1(System.Collections.Generic.IEnumerable{``0},System.String)">
             <summary>
             Checks whether a collection contains an inspector identified by the string value.
@@ -882,10 +925,50 @@
             <param name="collection">Main collection</param>
             <returns>Many-to-many table name</returns>
         </member>
+        <member name="T:FluentNHibernate.MappingModel.ClassBased.ExternalComponentMapping">
+            <summary>
+            A component that is declared external to a class mapping.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.MappingModel.ClassBased.ReferenceComponentMapping">
+            <summary>
+            A reference to a component which is declared externally. Contains properties
+            that can't be declared externally (property name, for example)
+            </summary>
+        </member>
         <member name="P:FluentNHibernate.Mapping.ColumnPart.Not">
             <summary>
             Inverts the next boolean
             </summary>
+        </member>
+        <member name="P:FluentNHibernate.Mapping.ComponentPartBase`1.Access">
+            <summary>
+            Set the access and naming strategy for this component.
+            </summary>
+        </member>
+        <member name="T:FluentNHibernate.Mapping.ReferenceComponentPart`1">
+            <summary>
+            The fluent-interface part for a external component reference. These are
+            components which have their bulk/body declared external to a class mapping
+            and are reusable.
+            </summary>
+            <typeparam name="T">Component type</typeparam>
+        </member>
+        <member name="M:FluentNHibernate.Mapping.ReferenceComponentPart`1.ColumnPrefix(System.String)">
+            <summary>
+            Sets the prefix for any columns defined within the component. To refer to the property
+            that exposes this component use {property}.
+            </summary>
+            <example>
+            // Entity using Address component
+            public class Person
+            {
+              public Address PostalAddress { get; set; }
+            }
+            
+            ColumnPrefix("{property}_") will result in any columns of Person.Address being prefixed with "PostalAddress_".
+            </example>
+            <param name="prefix">Prefix for column names</param>
         </member>
         <member name="T:FluentNHibernate.Mapping.FilterPart">
             <summary>
@@ -902,7 +985,7 @@
             Defines how NHibernate will access the object for persisting/hydrating (Defaults to Property)
             </summary>
         </member>
-        <member name="M:FluentNHibernate.SeparateSubclassVisitor.SortByDistanceFrom(System.Type,System.Collections.Generic.IEnumerable{FluentNHibernate.Mapping.Providers.IIndeterminateSubclassMappingProvider})">
+        <member name="M:FluentNHibernate.Visitors.SeparateSubclassVisitor.SortByDistanceFrom(System.Type,System.Collections.Generic.IEnumerable{FluentNHibernate.Mapping.Providers.IIndeterminateSubclassMappingProvider})">
             <summary>
             Takes a type that represents the level in the class/subclass-hiearchy that we're starting from, the parent,
             this can be a class or subclass; also takes a list of subclass providers. The providers are then iterated
@@ -916,7 +999,7 @@
             <param name="subProviders">List of subclasses</param>
             <returns>Dictionary key'd by the distance from the parentType.</returns>
         </member>
-        <member name="M:FluentNHibernate.SeparateSubclassVisitor.DistanceFromParentInterface(System.Type,System.Type,System.Int32@)">
+        <member name="M:FluentNHibernate.Visitors.SeparateSubclassVisitor.DistanceFromParentInterface(System.Type,System.Type,System.Int32@)">
             <summary>
             The evalType starts out as the original subclass. The class hiearchy is only
             walked if the subclass inherits from a class that is included in the subclassProviders.
@@ -926,7 +1009,7 @@
             <param name="level"></param>
             <returns></returns>
         </member>
-        <member name="M:FluentNHibernate.SeparateSubclassVisitor.DistanceFromParentBase(System.Type,System.Type,System.Int32@)">
+        <member name="M:FluentNHibernate.Visitors.SeparateSubclassVisitor.DistanceFromParentBase(System.Type,System.Type,System.Int32@)">
             <summary>
             The evalType is always one class higher in the hiearchy starting from the original subclass. The class 
             hiearchy is walked until the IsTopLevel (base class is Object) is met. The level is only incremented if 
@@ -1113,35 +1196,6 @@
             <summary>
             Gets whether any mappings were added
             </summary>
-        </member>
-        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.ProxyFactoryFactory(System.String)">
-            <summary>
-            Sets the proxyfactory.factory_class property.
-            NOTE: NHibernate 2.1 only
-            </summary>
-            <param name="proxyFactoryFactoryClass">factory class</param>
-            <returns>Configuration</returns>
-        </member>
-        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.AdoNetBatchSize(System.Int32)">
-            <summary>
-            Sets the adonet.batch_size property.
-            </summary>
-            <param name="size">Batch size</param>
-            <returns>Configuration</returns>
-        </member>
-        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.CurrentSessionContext(System.String)">
-            <summary>
-            Sets the current_session_context_class property.
-            </summary>
-            <param name="currentSessionContextClass">current session context class</param>
-            <returns>Configuration</returns>
-        </member>
-        <member name="M:FluentNHibernate.Cfg.Db.PersistenceConfiguration`2.CurrentSessionContext``1">
-            <summary>
-            Sets the current_session_context_class property.
-            </summary>
-            <typeparam name="TSessionContext">Implementation of ICurrentSessionContext to use</typeparam>
-            <returns>Configuration</returns>
         </member>
         <member name="P:FluentNHibernate.Cfg.Db.OracleClientConfiguration.Oracle9">
             <summary>
@@ -1928,11 +1982,6 @@
             Sets the access-strategy to use the type referenced.
             </summary>
             <typeparam name="TPropertyAccessorClass">Type to use as the access-strategy</typeparam>
-        </member>
-        <member name="P:FluentNHibernate.Mapping.ComponentPartBase`1.Access">
-            <summary>
-            Set the access and naming strategy for this component.
-            </summary>
         </member>
         <member name="M:FluentNHibernate.Mapping.DiscriminatorPart.AlwaysSelectWithValue">
             <summary>
