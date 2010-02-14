@@ -3,12 +3,26 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Customer
+    public class Entity
     {
-        public virtual int CustomerId { get; set; }
-        public virtual string FirstName { get; set; }
-        public virtual string LastName { get; set; }
-        public virtual DateTime Birthday { get; set; }
+        public int Id { get; set; }
+    }
+
+    public class Customer : Entity
+    {        
+        public string FirstName { get; set; }
+        public IDictionary<string, Book> FavouriteBooks { get; set; }
+
+        public Customer()
+        {
+            FavouriteBooks = new Dictionary<string, Book>();
+        }
+
+    }
+
+    public class Book : Entity
+    {
+        public string Name { get; set; }
     }
 
 

@@ -31,10 +31,14 @@ namespace Tests
             {
                 var customer = new Customer()
                 {
-                    Birthday = DateTime.Today,
                     FirstName = "Paul",
-                    LastName = "Batum"
                 };
+
+                var geb = new Book {Name = "Godel, Escher, Bach"};
+                var clr = new Book {Name = "CLR via C#"};
+
+                customer.FavouriteBooks["geb"] = geb;
+                customer.FavouriteBooks["clr"] = clr;
                 
                 session.Save(customer);
                 tx.Commit();

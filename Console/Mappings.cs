@@ -11,11 +11,28 @@ namespace Console
     {
         public CustomerMap()
         {
-            Id(x => x.CustomerId);
-            Map(x => x.Birthday);
-            
+            Id(x => x.Id);
+            Map(x => x.FirstName);
+            HasManyToMany<Book>(x => x.FavouriteBooks)
+                .Table("FavouriteBooks")                
+                .ParentKeyColumn("CustomerID")
+                .ChildKeyColumn("BookID")
+                .AsMap<string>("Nickname")                
+                .Cascade.All();
+                
+                
         }
     }
+
+    public class BookMap : ClassMap<Book>
+    {
+        public BookMap()
+        {
+            Id(x => x.Id);
+            Map(x => x.Name);
+        }
+    }
+
 
 
 }
