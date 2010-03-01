@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{170B633B-0778-4CC6-BEF6-11A47C32DB50}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D16AEA0-E9CC-4E72-920E-D0779CE7DC5D}"
 	ProjectSection(SolutionItems) = preProject
 		Binaries\Antlr3.Runtime.dll = Binaries\Antlr3.Runtime.dll
@@ -26,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Binaries\Rhino.Mocks.xml = Binaries\Rhino.Mocks.xml
 		Binaries\System.Data.SQLite.dll = Binaries\System.Data.SQLite.dll
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{170B633B-0778-4CC6-BEF6-11A47C32DB50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9DF7F072-909E-44CE-9C46-888D956E3055}"
 EndProject
