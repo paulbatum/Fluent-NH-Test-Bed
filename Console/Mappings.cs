@@ -13,7 +13,12 @@ namespace Console
         {
             Id(x => x.CustomerId);
             Map(x => x.Birthday);
-            
+            Component(x => x.Address, c =>
+            {
+                c.Map(x => x.PostCode);
+                c.Map(x => x.Street);
+                c.Map(x => x.StreetNumber);
+            });
         }
     }
 

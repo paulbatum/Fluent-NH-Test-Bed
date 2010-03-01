@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Console;
@@ -33,11 +34,25 @@ namespace Tests
                 {
                     Birthday = DateTime.Today,
                     FirstName = "Paul",
-                    LastName = "Batum"
+                    LastName = "Batum",
+                    Address = new Address()
+                    {
+                        StreetNumber = 33,
+                        Street = "Mort St",
+                        PostCode = 2612
+                    }
                 };
-                
+
                 session.Save(customer);
                 tx.Commit();
+            }
+
+            using (var session = _sessionFactory.OpenSession())
+            using (var tx = session.BeginTransaction())
+            {
+                var customer = session.Get<Customer>(1);
+                Debug.WriteLine("Loaded customer");
+                Debug.WriteLine(customer.Address.PostCode);
             }
 
 

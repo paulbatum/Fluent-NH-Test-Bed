@@ -8,6 +8,11 @@ using FluentNHibernate.Conventions.Instances;
 
 namespace Console
 {
-   
-    
+   public class ComponentConvention : IComponentConvention
+   {
+       public void Apply(IComponentInstance instance)
+       {
+           instance.LazyLoad();
+       }
+   }
 }
