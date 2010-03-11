@@ -14,7 +14,7 @@ namespace Console
             Id(x => x.ID);
 
             HasManyToMany(x => x.Groups)
-                .AsMap("GroupID")
+                .AsMap(null)
                 .AsTernaryAssociation()
                 .Element("IsManager", ep => ep.Type<bool>());
                 
