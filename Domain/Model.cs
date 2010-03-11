@@ -19,6 +19,11 @@ namespace Domain
 
         public IDictionary<Group, bool> Groups
         { get; private set; }
+
+        public User()
+        {
+            Groups = new Dictionary<Group, bool>();
+        }
     }
 
 

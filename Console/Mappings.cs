@@ -14,8 +14,10 @@ namespace Console
             Id(x => x.ID);
 
             HasManyToMany(x => x.Groups)
-                .AsMap<Group>("indexColName")
-                .Element("elementColName", ep => ep.Type<bool>());
+                .AsMap("GroupID")
+                .AsTernaryAssociation()
+                .Element("IsManager", ep => ep.Type<bool>());
+                
                     
                 
         }
