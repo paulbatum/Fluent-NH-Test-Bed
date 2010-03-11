@@ -29,14 +29,18 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer = new Customer()
-                {
-                    Birthday = DateTime.Today,
-                    FirstName = "Paul",
-                    LastName = "Batum"
-                };
-                
-                session.Save(customer);
+                var group1 = new Group();
+                var group2 = new Group();
+
+                session.Save(group1);
+                session.Save(group2);
+
+                var user = new User();
+                session.Save(user);
+
+                user.Groups[group1] = false;
+                user.Groups[group2] = true;
+
                 tx.Commit();
             }
 

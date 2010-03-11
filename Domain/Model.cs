@@ -3,12 +3,22 @@ using System.Collections.Generic;
 
 namespace Domain
 {
-    public class Customer
+    public class Group
     {
-        public virtual int CustomerId { get; set; }
-        public virtual string FirstName { get; set; }
-        public virtual string LastName { get; set; }
-        public virtual DateTime Birthday { get; set; }
+        public long ID
+        { get; private set; }
+
+        //public IDictionary<User, bool> Users
+        //{ get; private set; }
+    }
+
+    public class User
+    {
+        public long ID
+        { get; private set; }
+
+        public IDictionary<Group, bool> Groups
+        { get; private set; }
     }
 
 
