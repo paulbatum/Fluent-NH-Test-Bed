@@ -1,0 +1,862 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="125" />
+      <Item value="T" priority="0" />
+      <Item value="_dbFile" priority="0" />
+      <Item value="var" priority="31" />
+      <Item value="CreateSessionFactory" priority="0" />
+      <Item value="Console" priority="3" />
+      <Item value="MsSqlCeConfiguration" priority="1" />
+      <Item value="m" priority="19" />
+      <Item value="typeof" priority="11" />
+      <Item value="EntityBase" priority="1" />
+      <Item value="s" priority="6" />
+      <Item value="TestEntityAMap" priority="0" />
+      <Item value="mapping" priority="26" />
+      <Item value="class" priority="64" />
+      <Item value="FluentNHibernate" priority="2" />
+      <Item value="Conventions" priority="1" />
+      <Item value="IHasManyConvention" priority="3" />
+      <Item value="instance" priority="22" />
+      <Item value="IHibernateMappingInstance" priority="1" />
+      <Item value="if" priority="8" />
+      <Item value="IHibernateMappingConvention" priority="0" />
+      <Item value="IConventionAcceptance" priority="0" />
+      <Item value="criteria" priority="5" />
+      <Item value="TestEntityA" priority="10" />
+      <Item value="x" priority="0" />
+      <Item value="CamelCasePrefix.Underscore" priority="0" />
+      <Item value="Prefix" priority="1" />
+      <Item value="p" priority="6" />
+      <Item value="IIdConvention" priority="1" />
+      <Item value="IComponentConvention" priority="2" />
+      <Item value="foreach" priority="3" />
+      <Item value="propertyInspector" priority="1" />
+      <Item value="IPropertyConvention" priority="2" />
+      <Item value="IComponentConventionAcceptance" priority="0" />
+      <Item value="string" priority="17" />
+      <Item value="Address" priority="2" />
+      <Item value="as" priority="1" />
+      <Item value="c" priority="14" />
+      <Item value="t" priority="1" />
+      <Item value="type" priority="0" />
+      <Item value="throw" priority="0" />
+      <Item value="new" priority="53" />
+      <Item value="NotImplementedException" priority="0" />
+      <Item value="IPropertyConventionAcceptance" priority="2" />
+      <Item value="componentMapping" priority="2" />
+      <Item value="ComponentInstance" priority="0" />
+      <Item value="BindingFlags.Instance" priority="0" />
+      <Item value="BindingFlags" priority="0" />
+      <Item value="fieldInfo" priority="0" />
+      <Item value="propertyMapping" priority="0" />
+      <Item value="column" priority="1" />
+      <Item value="ClassMap" priority="9" />
+      <Item value="ctor" priority="24" />
+      <Item value="Component" priority="2" />
+      <Item value="Id" priority="7" />
+      <Item value="IAutoMappingOverride" priority="13" />
+      <Item value="using" priority="4" />
+      <Item value="sessionFactory" priority="1" />
+      <Item value="session" priority="31" />
+      <Item value="false" priority="2" />
+      <Item value="a" priority="3" />
+      <Item value="void" priority="1" />
+      <Item value="TestEntityB" priority="8" />
+      <Item value="_children" priority="0" />
+      <Item value="b" priority="2" />
+      <Item value="this" priority="7" />
+      <Item value="tx" priority="5" />
+      <Item value="AssemblyTypeSource" priority="0" />
+      <Item value="PersistenceSpecification" priority="0" />
+      <Item value="Comment" priority="1" />
+      <Item value="items" priority="0" />
+      <Item value="private" priority="1" />
+      <Item value="IEqualityComparer" priority="1" />
+      <Item value="return" priority="11" />
+      <Item value="obj" priority="3" />
+      <Item value="EntityBComparer" priority="0" />
+      <Item value="Equals" priority="0" />
+      <Item value="is" priority="5" />
+      <Item value="true" priority="0" />
+      <Item value="else" priority="0" />
+      <Item value="entityB" priority="1" />
+      <Item value="AppenderConfiguration" priority="0" />
+      <Item value="GetHashCode" priority="0" />
+      <Item value="interface" priority="2" />
+      <Item value="IBar" priority="0" />
+      <Item value="Foo" priority="2" />
+      <Item value="int" priority="25" />
+      <Item value="Something" priority="0" />
+      <Item value="enum" priority="1" />
+      <Item value="RoleMap" priority="0" />
+      <Item value="Role" priority="1" />
+      <Item value="r" priority="1" />
+      <Item value="virtual" priority="20" />
+      <Item value="Type" priority="0" />
+      <Item value="_typeOfContent" priority="1" />
+      <Item value="value" priority="0" />
+      <Item value="Map" priority="5" />
+      <Item value="Privilege" priority="0" />
+      <Item value="DateTime" priority="8" />
+      <Item value="Version" priority="0" />
+      <Item value="CustomerMap" priority="0" />
+      <Item value="Person" priority="2" />
+      <Item value="FirstName" priority="3" />
+      <Item value="LastName" priority="1" />
+      <Item value="MsSqlConfiguration" priority="0" />
+      <Item value="MsSqlConnectionStringBuilder" priority="0" />
+      <Item value="KeyColumn" priority="0" />
+      <Item value="IList" priority="10" />
+      <Item value="Orders" priority="2" />
+      <Item value="List&lt;Order&gt;" priority="1" />
+      <Item value="Customer" priority="13" />
+      <Item value="e" priority="0" />
+      <Item value="Order" priority="8" />
+      <Item value="abstract" priority="1" />
+      <Item value="IClassConvention" priority="0" />
+      <Item value="Quantity" priority="0" />
+      <Item value="UserTypeConvention" priority="0" />
+      <Item value="NHibernate" priority="0" />
+      <Item value="UserTypes" priority="0" />
+      <Item value="IUserType" priority="0" />
+      <Item value="IUserTypeConvention" priority="0" />
+      <Item value="Entity" priority="1" />
+      <Item value="id" priority="3" />
+      <Item value="c2" priority="0" />
+      <Item value="EntityBaseMap" priority="0" />
+      <Item value="Stop" priority="0" />
+      <Item value="Helpers" priority="0" />
+      <Item value="DefaultLazy" priority="1" />
+      <Item value="Coordinate" priority="0" />
+      <Item value="Mapping" priority="0" />
+      <Item value="Trip" priority="0" />
+      <Item value="bool" priority="0" />
+      <Item value="HasMany" priority="4" />
+      <Item value="ip" priority="7" />
+      <Item value="ep" priority="5" />
+      <Item value="IndexPart" priority="2" />
+      <Item value="ElementPart" priority="1" />
+      <Item value="Action" priority="1" />
+      <Item value="epAction" priority="1" />
+      <Item value="thing" priority="0" />
+      <Item value="index" priority="0" />
+      <Item value="OneToManyPart" priority="1" />
+      <Item value="File" priority="0" />
+      <Item value="Directory" priority="1" />
+      <Item value="mappings" priority="1" />
+      <Item value="f" priority="1" />
+      <Item value="Bar" priority="0" />
+      <Item value="Store" priority="3" />
+      <Item value="Employee" priority="0" />
+      <Item value="Assert" priority="7" />
+      <Item value="CollectionAssert" priority="1" />
+      <Item value="Staff" priority="0" />
+      <Item value="List&lt;Employee&gt;" priority="1" />
+      <Item value="Managers" priority="0" />
+      <Item value="CashBalanceSheet" priority="2" />
+      <Item value="Transaction" priority="2" />
+      <Item value="List" priority="0" />
+      <Item value="Transactions" priority="0" />
+      <Item value="List&lt;Transaction&gt;" priority="0" />
+      <Item value="sheet" priority="2" />
+      <Item value="DollarAmount" priority="0" />
+      <Item value="TransactionDate" priority="0" />
+      <Item value="HasOne" priority="0" />
+      <Item value="References" priority="0" />
+      <Item value="CreditCard" priority="5" />
+      <Item value="customer" priority="10" />
+      <Item value="creditCard" priority="3" />
+      <Item value="null" priority="2" />
+      <Item value="checked" priority="0" />
+      <Item value="cardId" priority="1" />
+      <Item value="List&lt;CreditCard&gt;" priority="0" />
+      <Item value="ID" priority="0" />
+      <Item value="customerId" priority="0" />
+      <Item value="Join" priority="0" />
+      <Item value="jp" priority="0" />
+      <Item value="Birthday" priority="0" />
+      <Item value="decimal" priority="0" />
+      <Item value="SalesItem" priority="1" />
+      <Item value="Price" priority="1" />
+      <Item value="Prices" priority="0" />
+      <Item value="Money" priority="0" />
+      <Item value="Amount" priority="0" />
+      <Item value="salesItem" priority="0" />
+      <Item value="IDictionary" priority="3" />
+      <Item value="HasManyToMany" priority="1" />
+      <Item value="compositeId" priority="1" />
+      <Item value="Parents" priority="0" />
+      <Item value="List&lt;Customer&gt;" priority="1" />
+      <Item value="Children" priority="0" />
+      <Item value="customer1" priority="0" />
+      <Item value="customer2" priority="0" />
+      <Item value="Debt" priority="3" />
+      <Item value="Balance" priority="1" />
+      <Item value="CarLoan" priority="0" />
+      <Item value="LoanApplication" priority="2" />
+      <Item value="ExistingDebts" priority="1" />
+      <Item value="carLoan" priority="1" />
+      <Item value="List&lt;Debt&gt;" priority="0" />
+      <Item value="application" priority="4" />
+      <Item value="Has" priority="2" />
+      <Item value="parent" priority="0" />
+      <Item value="Is" priority="1" />
+      <Item value="Prefix.Underscore" priority="0" />
+      <Item value="SubclassMap" priority="0" />
+      <Item value="DiscriminateSubClassesOnColumn" priority="0" />
+      <Item value="Book" priority="4" />
+      <Item value="FavouriteBooks" priority="0" />
+      <Item value="Dictionary&lt;string,Book&gt;" priority="0" />
+      <Item value="Name" priority="1" />
+      <Item value="geb" priority="0" />
+      <Item value="clr" priority="0" />
+      <Item value="IdentityPart" priority="1" />
+      <Item value="Predicate" priority="0" />
+      <Item value="Properties" priority="0" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="HasMany`1" priority="3" />
+      <Item value="Company`0" priority="0" />
+      <Item value="CompositeId`1" priority="5" />
+      <Item value="Employee`0" priority="0" />
+      <Item value="override" priority="5" />
+      <Item value="CompanyType`0" priority="1" />
+      <Item value="kp" priority="1" />
+      <Item value="ICompositeIdentityConvention`0" priority="0" />
+      <Item value="ICompositeIdentityConventionAcceptance`0" priority="0" />
+      <Item value="IKeyPropertyConvention`0" priority="0" />
+      <Item value="IKeyPropertyConventionAcceptance`0" priority="0" />
+      <Item value="Id`1" priority="3" />
+      <Item value="Map`0" priority="3" />
+      <Item value="Code" priority="0" />
+      <Item value="CompanyType" priority="0" />
+      <Item value="Console`0" priority="0" />
+      <Item value="debt" priority="0" />
+      <Item value="cc" priority="2" />
+      <Item value="Entity`0" priority="0" />
+      <Item value="Debt`0" priority="0" />
+      <Item value="DebtRelationship`0" priority="3" />
+      <Item value="Debt1" priority="0" />
+      <Item value="Debt2" priority="0" />
+      <Item value="debtRelationship" priority="3" />
+      <Item value="CreditCard`0" priority="1" />
+      <Item value="Assert`0" priority="0" />
+      <Item value="CarLoan`0" priority="0" />
+      <Item value="Relationships" priority="1" />
+      <Item value="List&lt;DebtRelationship&gt;" priority="0" />
+      <Item value="Limit" priority="0" />
+      <Item value="CarDescription" priority="0" />
+      <Item value="Debug`0" priority="1" />
+      <Item value="cl" priority="0" />
+      <Item value="Favourite`0" priority="0" />
+      <Item value="favourite" priority="2" />
+      <Item value="object" priority="0" />
+      <Item value="Customer`0" priority="0" />
+      <Item value="Favourites" priority="0" />
+      <Item value="Favourite" priority="0" />
+      <Item value="EntityName" priority="0" />
+      <Item value="Token" priority="0" />
+      <Item value="Value" priority="0" />
+      <Item value="SomeOtherThing`0" priority="0" />
+      <Item value="Child`0" priority="0" />
+      <Item value="IReferenceConvention`0" priority="0" />
+      <Item value="HasManyToMany`1" priority="1" />
+      <Item value="IdentityGenerationStrategyBuilder" priority="1" />
+      <Item value="Process`0" priority="1" />
+      <Item value="Plugins" priority="1" />
+      <Item value="Plugin" priority="0" />
+      <Item value="Dictionary&lt;Plugin,Settings&gt;" priority="0" />
+      <Item value="List&lt;Process&gt;" priority="0" />
+      <Item value="Plugin`0" priority="0" />
+      <Item value="Processes" priority="0" />
+      <Item value="process1" priority="0" />
+      <Item value="Settings`0" priority="2" />
+      <Item value="SomeValue" priority="0" />
+      <Item value="process" priority="0" />
+      <Item value="plugin" priority="1" />
+      <Item value="settings" priority="0" />
+      <Item value="setting" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.MappingConfiguration">
+      <Item value="AutoMappings" priority="9" />
+      <Item value="FluentMappings" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine" priority="0" />
+      <Item value="WriteLine`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Automapping.AutoPersistenceModel">
+      <Item value="IncludeBase" priority="1" />
+      <Item value="IgnoreBase" priority="0" />
+      <Item value="Conventions" priority="4" />
+      <Item value="UseOverridesFromAssemblyOf" priority="1" />
+      <Item value="Configure" priority="0" />
+      <Item value="Where" priority="1" />
+      <Item value="Setup" priority="2" />
+      <Item value="MergeMappings" priority="2" />
+      <Item value="Override" priority="0" />
+      <Item value="CompileMappings" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.SetupConventionFinder`1">
+      <Item value="Setup" priority="1" />
+      <Item value="AddFromAssemblyOf" priority="1" />
+      <Item value="Add" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.Db.SQLiteConfiguration">
+      <Item value="ShowSql" priority="0" />
+      <Item value="InMemory`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.FluentConfiguration">
+      <Item value="Mappings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.AutoMappingsContainer">
+      <Item value="ExportTo" priority="0" />
+      <Item value="First" priority="1" />
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debugger">
+      <Item value="Break" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Automapping.AutoMapping`1">
+      <Item value="HasMany" priority="5" />
+      <Item value="HibernateMapping" priority="0" />
+      <Item value="References" priority="1" />
+      <Item value="Id" priority="2" />
+      <Item value="Component" priority="1" />
+      <Item value="Map" priority="2" />
+      <Item value="Version" priority="2" />
+      <Item value="IgnoreProperty" priority="1" />
+      <Item value="DynamicUpdate" priority="0" />
+      <Item value="HasManyToMany" priority="0" />
+      <Item value="References`1" priority="1" />
+      <Item value="HasMany`1" priority="0" />
+      <Item value="LazyLoad`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.TestEntityA">
+      <Item value="Children" priority="3" />
+      <Item value="Id" priority="1" />
+      <Item value="Address" priority="1" />
+      <Item value="AddChild" priority="1" />
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.OneToManyPart`1">
+      <Item value="KeyColumn" priority="7" />
+      <Item value="KeyColumns" priority="2" />
+      <Item value="Access" priority="2" />
+      <Item value="Element" priority="2" />
+      <Item value="Inverse" priority="3" />
+      <Item value="Cascade" priority="2" />
+      <Item value="AsMap" priority="6" />
+      <Item value="AsEntityMap" priority="0" />
+      <Item value="AsIndexedCollection" priority="0" />
+      <Item value="Where" priority="1" />
+      <Item value="Component" priority="1" />
+      <Item value="AsMap`1" priority="0" />
+      <Item value="KeyColumn`0" priority="1" />
+      <Item value="Component`0" priority="1" />
+      <Item value="LazyLoad`0" priority="0" />
+      <Item value="Table`0" priority="0" />
+      <Item value="AsList`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ColumnNameCollection`1">
+      <Item value="Clear" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IOneToManyCollectionInstance">
+      <Item value="Key" priority="2" />
+      <Item value="Cascade" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IKeyInstance">
+      <Item value="Column" priority="2" />
+      <Item value="Columns" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.HibernateMappingPart">
+      <Item value="DefaultLazy" priority="1" />
+      <Item value="Not" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IHibernateMappingInstance">
+      <Item value="Not" priority="0" />
+      <Item value="DefaultLazy" priority="0" />
+      <Item value="EntityType" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.AcceptanceCriteria.IAcceptanceCriteria`1">
+      <Item value="Expect" priority="4" />
+      <Item value="Expect`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.AccessStrategyBuilder`1">
+      <Item value="CamelCaseField" priority="2" />
+      <Item value="ReadOnlyPropertyThroughCamelCaseField" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Mapping.Prefix">
+      <Item value="Underscore" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ManyToOnePart`1">
+      <Item value="Not" priority="0" />
+      <Item value="Nullable" priority="0" />
+      <Item value="Column" priority="0" />
+      <Item value="Unique" priority="0" />
+      <Item value="Columns" priority="0" />
+      <Item value="Column`0" priority="0" />
+      <Item value="LazyLoad`0" priority="1" />
+      <Item value="Nullable`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.IdentityPart">
+      <Item value="GeneratedBy" priority="1" />
+      <Item value="CustomSqlType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.IdentityGenerationStrategyBuilder`1">
+      <Item value="HiLo" priority="0" />
+      <Item value="Identity" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ParamBuilder">
+      <Item value="AddParam" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IIdentityInstance">
+      <Item value="GeneratedBy" priority="2" />
+      <Item value="Generator" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IGeneratorInstance">
+      <Item value="HiLo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IComponentInstance">
+      <Item value="Properties" priority="1" />
+      <Item value="Type" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ComponentPart`1">
+      <Item value="Map" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Address">
+      <Item value="Line1" priority="1" />
+      <Item value="Line2" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.AutoMappingExpressions">
+      <Item value="IsComponentType" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetField" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="FullName" priority="0" />
+      <Item value="Namespace" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.BindingFlags">
+      <Item value="NonPublic" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.FieldInfo">
+      <Item value="GetValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.MappingModel.ClassBased.ComponentMapping">
+      <Item value="Properties" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.MappingModel.PropertyMapping">
+      <Item value="Columns" priority="2" />
+      <Item value="AddColumn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.MappingModel.IDefaultableEnumerable`1">
+      <Item value="First" priority="0" />
+      <Item value="UserDefined" priority="2" />
+      <Item value="Defaults" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="First" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.MappingModel.ColumnMapping">
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.FluentMappingsContainer">
+      <Item value="Add" priority="0" />
+      <Item value="PersistenceModel" priority="1" />
+      <Item value="Conventions" priority="2" />
+      <Item value="AddFromAssembly" priority="1" />
+      <Item value="AddFromAssemblyOf" priority="2" />
+      <Item value="ExportTo" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISessionFactory">
+      <Item value="OpenSession" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="BeginTransaction" priority="2" />
+      <Item value="Save" priority="12" />
+      <Item value="Flush" priority="0" />
+      <Item value="Get" priority="5" />
+      <Item value="Delete" priority="0" />
+      <Item value="CreateQuery" priority="1" />
+      <Item value="Save`0" priority="3" />
+      <Item value="Get`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Add" priority="4" />
+      <Item value="First" priority="2" />
+      <Item value="RemoveAt" priority="1" />
+      <Item value="Count" priority="0" />
+      <Item value="First`1" priority="0" />
+      <Item value="Single`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.TestEntityB">
+      <Item value="Comment" priority="2" />
+      <Item value="TestEntityA" priority="0" />
+      <Item value="GetHashCode" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CollectionCascadeExpression`1">
+      <Item value="All" priority="4" />
+      <Item value="SaveUpdate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ITransaction">
+      <Item value="Commit" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Automapping.AutoMap">
+      <Item value="Assembly" priority="0" />
+      <Item value="Assemblies`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.Assembly">
+      <Item value="Load" priority="0" />
+      <Item value="Load`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Testing.PersistenceSpecification`1">
+      <Item value="CheckEnumerable" priority="0" />
+      <Item value="VerifyTheMappings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="GetHashCode" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="GetHashCode" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Conventions.Helpers.AutoImport">
+      <Item value="Always" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Console.TestMap">
+      <Item value="KeyColumn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Foo">
+      <Item value="Bar" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Type">
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Role">
+      <Item value="TypeOfContent" priority="1" />
+      <Item value="ModifiedAt" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.PropertyPart">
+      <Item value="Access" priority="0" />
+      <Item value="CustomType" priority="0" />
+      <Item value="Column" priority="1" />
+      <Item value="Formula" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
+      <Item value="Write" priority="0" />
+      <Item value="WriteLine" priority="0" />
+      <Item value="WriteLine`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Cfg.Db.MsSqlConfiguration">
+      <Item value="MsSql2005" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.Db.MsSqlConfiguration">
+      <Item value="ShowSql" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Cfg.Db.MsSqlConnectionStringBuilder">
+      <Item value="TrustedConnection" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.ICollectionCascadeInstance">
+      <Item value="All" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IClassInstance">
+      <Item value="Version" priority="3" />
+      <Item value="OptimisticLock" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Inspections.IVersionInspector">
+      <Item value="Default" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IOptimisticLockInstance">
+      <Item value="Version" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Inspections.IPropertyInspector">
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Customer">
+      <Item value="Orders" priority="2" />
+      <Item value="Version" priority="2" />
+      <Item value="Id" priority="1" />
+      <Item value="FirstName" priority="7" />
+      <Item value="CreditCard" priority="6" />
+      <Item value="AddCreditCard" priority="0" />
+      <Item value="ID" priority="1" />
+      <Item value="RemoveCreditCard" priority="0" />
+      <Item value="CreditCards" priority="2" />
+      <Item value="CustomerId" priority="0" />
+      <Item value="LastName" priority="0" />
+      <Item value="Birthday" priority="0" />
+      <Item value="CalendarItems" priority="0" />
+      <Item value="Parents" priority="1" />
+      <Item value="Children" priority="2" />
+      <Item value="FavouriteBooks" priority="1" />
+      <Item value="Properties" priority="0" />
+      <Item value="Favourites" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Order">
+      <Item value="Version" priority="0" />
+      <Item value="Id" priority="0" />
+      <Item value="Quantity" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Entity">
+      <Item value="Version" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.PersistenceModel">
+      <Item value="Conventions" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.IConventionFinder">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Conventions.Helpers.DefaultLazy">
+      <Item value="Never" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Trip">
+      <Item value="Id" priority="0" />
+      <Item value="Origin" priority="0" />
+      <Item value="Destination" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Coordinate">
+      <Item value="X" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ElementPart">
+      <Item value="Type" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.IndexPart">
+      <Item value="Type" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists" priority="0" />
+      <Item value="CreateDirectory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.IBar">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Store">
+      <Item value="Managers" priority="3" />
+      <Item value="Staff" priority="0" />
+      <Item value="AddStaff" priority="0" />
+      <Item value="AddManager" priority="0" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ColumnMappingCollection`1">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual" priority="1" />
+      <Item value="NotNull" priority="0" />
+      <Item value="IsNull" priority="0" />
+      <Item value="That" priority="1" />
+      <Item value="That`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.CashBalanceSheet">
+      <Item value="Transactions" priority="2" />
+      <Item value="ClaimId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Console.Customer">
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.OneToOnePart`1">
+      <Item value="PropertyRef" priority="0" />
+      <Item value="Cascade" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.CreditCard">
+      <Item value="Customer" priority="2" />
+      <Item value="ID" priority="1" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="CreditLimit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CascadeExpression`1">
+      <Item value="All" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.JoinPart`1">
+      <Item value="Map" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Today" priority="0" />
+      <Item value="Now" priority="0" />
+      <Item value="Parse" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.SalesItem">
+      <Item value="Id" priority="0" />
+      <Item value="Prices" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Price">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Money">
+      <Item value="Amount" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CompositeElementPart`1">
+      <Item value="Map" priority="0" />
+      <Item value="Map`0" priority="2" />
+      <Item value="Component`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ManyToManyPart`1">
+      <Item value="ParentKeyColumn" priority="2" />
+      <Item value="ChildKeyColumn" priority="1" />
+      <Item value="Inverse" priority="0" />
+      <Item value="Cascade" priority="2" />
+      <Item value="AsTernaryAssociation" priority="0" />
+      <Item value="Table" priority="0" />
+      <Item value="AsMap" priority="1" />
+      <Item value="AsIndexedCollection" priority="0" />
+      <Item value="AsTernaryAssociation`0" priority="0" />
+      <Item value="AsEntityMap`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.LoanApplication">
+      <Item value="ExistingDebts" priority="3" />
+      <Item value="Id" priority="0" />
+      <Item value="Relationships" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Has">
+      <Item value="Count" priority="1" />
+      <Item value="Member" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NUnit.Framework.Constraints.ResolvableConstraintExpression">
+      <Item value="EqualTo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.IQuery">
+      <Item value="UniqueResult" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="EqualTo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Console.CustomerMap">
+      <Item value="DiscriminateSubClassesOnColumn" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Console.MyMap">
+      <Item value="Subclass" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Book">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Person">
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Company">
+      <Item value="ClientId" priority="1" />
+      <Item value="Code" priority="4" />
+      <Item value="CompanyType" priority="1" />
+      <Item value="CompanyId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Employee">
+      <Item value="Company" priority="1" />
+      <Item value="SSN" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CompositeIdentityPart`1">
+      <Item value="KeyProperty`0" priority="2" />
+      <Item value="KeyReference`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.KeyPropertyPart">
+      <Item value="Type`0" priority="0" />
+      <Item value="ColumnName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IKeyPropertyInstance">
+      <Item value="Type" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Domain.CompanyType">
+      <Item value="Awesome" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentNHibernate.Cfg.Db.SQLiteConfiguration">
+      <Item value="Standard" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.DebtRelationship">
+      <Item value="Debt1" priority="1" />
+      <Item value="Debt2" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.CarLoan">
+      <Item value="CarDescription" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Favourite">
+      <Item value="EntityName" priority="0" />
+      <Item value="Token" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Token">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Child">
+      <Item value="OtherThing" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Conventions.Instances.IManyToOneInstance">
+      <Item value="Nullable`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Process">
+      <Item value="Id" priority="0" />
+      <Item value="Plugins" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Plugin">
+      <Item value="Id" priority="0" />
+      <Item value="Processes" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Domain.Settings">
+      <Item value="Id" priority="0" />
+      <Item value="SomeValue" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="8D16AEA0-E9CC-4E72-920E-D0779CE7DC5D/f:nhibernate-mapping.xsd/l:E!?code?FluentNH-TestBed?Binaries?nhibernate-mapping.xsd" caret="1205" fromTop="19" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Program.cs" caret="0" fromTop="0" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Setup.cs" caret="1923" fromTop="17" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="215" fromTop="1" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingConventions.cs" caret="280" fromTop="11" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="362" fromTop="13" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="1121" fromTop="21" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Mappings.cs" caret="279" fromTop="7" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="591" fromTop="13" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="1021" fromTop="27" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="265" fromTop="9" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="373" fromTop="6" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="960" fromTop="7" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="1215" fromTop="15" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="1085" fromTop="12" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="1938" fromTop="29" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="2031" fromTop="31" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="1711" fromTop="6" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Mappings.cs" caret="806" fromTop="20" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="920" fromTop="19" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="800" fromTop="20" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="845" fromTop="24" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Setup.cs" caret="2104" fromTop="19" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Setup.cs" caret="1793" fromTop="14" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Setup.cs" caret="1366" fromTop="7" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="804" fromTop="19" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="710" fromTop="15" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="215" fromTop="6" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingOverrides.cs" caret="215" fromTop="1" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingConventions.cs" caret="420" fromTop="13" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:MappingConventions.cs" caret="268" fromTop="9" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="663" fromTop="19" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Mappings.cs" caret="773" fromTop="28" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="536" fromTop="22" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="189" fromTop="7" />
+      <File id="9DF7F072-909E-44CE-9C46-888D956E3055/f:Model.cs" caret="306" fromTop="11" />
+      <File id="70A4F7DD-CE9B-4050-B43A-AAD254CF3C6D/f:Tests.cs" caret="1063" fromTop="16" />
+      <File id="170B633B-0778-4CC6-BEF6-11A47C32DB50/f:Mappings.cs" caret="397" fromTop="8" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>
