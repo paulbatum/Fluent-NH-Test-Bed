@@ -37,8 +37,8 @@ namespace Tests
                 var geb = new Book {Name = "Godel, Escher, Bach"};
                 var clr = new Book {Name = "CLR via C#"};
 
-                customer.FavouriteBooks["geb"] = geb;
-                customer.FavouriteBooks["clr"] = clr;
+                customer.FavouriteBooks[BookType.PopSci] = geb;
+                customer.FavouriteBooks[BookType.Programming] = clr;
                 
                 session.Save(customer);
                 tx.Commit();

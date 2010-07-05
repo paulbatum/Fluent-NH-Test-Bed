@@ -17,7 +17,7 @@ namespace Console
                 .Table("FavouriteBooks")                
                 .ParentKeyColumn("CustomerID")
                 .ChildKeyColumn("BookID")
-                .AsMap<string>("Nickname")                
+                .AsMap<string>("BookType")                
                 .Cascade.All();
                 
                 

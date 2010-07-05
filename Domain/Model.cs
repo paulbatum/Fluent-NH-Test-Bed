@@ -11,11 +11,11 @@ namespace Domain
     public class Customer : Entity
     {        
         public string FirstName { get; set; }
-        public IDictionary<string, Book> FavouriteBooks { get; set; }
+        public IDictionary<BookType, Book> FavouriteBooks { get; set; }
 
         public Customer()
         {
-            FavouriteBooks = new Dictionary<string, Book>();
+            FavouriteBooks = new Dictionary<BookType, Book>();
         }
 
     }
@@ -25,5 +25,10 @@ namespace Domain
         public string Name { get; set; }
     }
 
+    public enum BookType
+    {        
+        Programming,
+        PopSci
+    }
 
 }
