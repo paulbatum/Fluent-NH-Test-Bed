@@ -32,9 +32,10 @@ namespace Tests
                 var customer = new Customer()
                 {
                     Birthday = DateTime.Today,
-                    FirstName = "Paul",
-                    LastName = "Batum"
                 };
+
+                var group = new Group();
+                customer.Groups.Add(group);
                 
                 session.Save(customer);
                 tx.Commit();
