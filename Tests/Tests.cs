@@ -29,14 +29,17 @@ namespace Tests
             using (var session = _sessionFactory.OpenSession())
             using (var tx = session.BeginTransaction())
             {
-                var customer = new Customer()
-                {
-                    Birthday = DateTime.Today,
-                    FirstName = "Paul",
-                    LastName = "Batum"
-                };
-                
-                session.Save(customer);
+                var book = new Book() {Title = "Domain Driven Design"};
+                book.Ratings.Add(new Rating() { UserId = 1, Value = 10});
+                book.Ratings.Add(new Rating() { UserId = 2, Value = 8 });
+
+                var cd = new CD() {Title = "Lateralus"};
+                cd.Ratings.Add(new Rating() { UserId = 1, Value = 9 });
+                cd.Ratings.Add(new Rating() { UserId = 2, Value = 7 });
+
+                session.Save(book);
+                session.Save(cd);
+
                 tx.Commit();
             }
 
